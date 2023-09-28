@@ -6,19 +6,19 @@ export default function Post() {
 
   const [data, setData] = React.useState(null);
   
-
   React.useEffect(() => {
-      fetch("/api/post")
+      fetch("/api/post/latest")
         .then((response) => response.json())
         .then((data) => setData(data))
     }, []);
 
-  return (
+  const postPage = (post) => {
+    return (
     
-    <div className="post">
+    <li key={post["id"]} className="post">
       <img
         className="postImg"
-        src={!data ? "Loading..." : data["imageLink"]}
+        src={!post ? "Loading..." : post["imageLink"]}
         alt=""
       />
       <div className="postInfo">
@@ -36,17 +36,31 @@ export default function Post() {
         </div>
         <span className="postTitle">
           <Link to="/post/abc" className="link">
-          <p>{!data ? "Loading..." : data["title"]}</p>
+          <p>{!post ? "Loading..." : post["title"]}</p>
           </Link>
         </span>
         <hr />
         <span className="postDate">
-          <p>{!data ? "Loading..." : data["createdAt"]}</p>
+          <p>{!post ? "Loading..." : post["createdAt"]}</p>
           </span>
       </div>
-      <p className="postDesc">
-      <p>{!data ? "Loading..." : data["body"]}</p>
-      </p>
-    </div>
-  );
-}
+      <span className="postDesc">
+      <p>{!post ? "Loading..." : post["body"]}</p>
+      </span>
+    </li>
+  );}
+
+  // TODO work with this as in example
+  // const postsPage = ({posts}) => {}
+  //
+  // const postsPage = (data) => (
+  //     <ul className='main-container'>
+  //       {data.map(post => postPage(post))}
+  //     </ul>
+  // );
+
+  return (
+  <ul className='main-container'>
+    {!data ? "" : data.map(post => postPage(post))}
+  </ul>)
+};
