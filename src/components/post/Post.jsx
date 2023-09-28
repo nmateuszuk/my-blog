@@ -2,9 +2,10 @@ import { Link } from "react-router-dom";
 import "./post.css";
 import React from 'react'
 
-export default function Post({img}) {
+export default function Post() {
 
   const [data, setData] = React.useState(null);
+  
 
   React.useEffect(() => {
       fetch("/api/post")
@@ -17,7 +18,7 @@ export default function Post({img}) {
     <div className="post">
       <img
         className="postImg"
-        src={img}
+        src={!data ? "Loading..." : data["imageLink"]}
         alt=""
       />
       <div className="postInfo">
