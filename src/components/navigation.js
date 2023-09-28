@@ -1,8 +1,6 @@
 import React, {useState} from 'react'
 import{Link} from 'react-router-dom';
 import { Avatar } from 'antd';
-import { MenuOutline } from 'react-ionicons';
-
 
 const navLinks=[
     {
@@ -41,7 +39,6 @@ export default function Navigation(){
                 {/* <span>{`${user.firstName} ${user.last.Name}`}</span> */}
                 <span className='menu-avatar-name'>Matka Anieli</span>
             </span>
-            <MenuOutline className='menu' color={'#00000'} title={'title'} height={'24px'} width={'24px'} onClick={()=> setMenuActive(!menuActive)}/>
         </div>
     </nav>
     )
