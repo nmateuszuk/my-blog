@@ -2,6 +2,7 @@
     height: 65px;
     width: 100%;
     background: rgb(193, 190, 186);
+    position: sticky;
     display: flex;
     justify-content: space-between;
     color: $text-color;
@@ -32,6 +33,14 @@
         margin-left: 15px;
     }
 
+    .topSearchIcon{
+        font-size: 18px;
+        color: #666;
+        cursor: s;
+        margin-left: 20px;
+
+    }
+
     ul{
         height: 100%;
         margin-block-start: 0;
@@ -40,7 +49,7 @@
         display: flex;
         align-items: center;
         list-style-type: none; //will remove little bullet points
-        margin-right: 20px;
+        margin-right: 40px;
     }
 
     a{

@@ -1,7 +1,6 @@
 import React, {useState} from 'react'
 import{Link} from 'react-router-dom';
 import { Avatar } from 'antd';
-import Sidebar from './sidebar/Sidebar';
 
 const navLinks=[
     {
@@ -40,7 +39,7 @@ export default function Navigation(){
                 {/* <span>{`${user.firstName} ${user.last.Name}`}</span> */}
                 <span className='menu-avatar-name'>Matka Anieli</span>
             </span>
-            <Sidebar />
+            <i className="topSearchIcon fas fa-search"></i>
         </div>
     </nav>
     )
