@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import "./post.css";
 import React from 'react'
 
-export default function Post() {
+export default function PostPage() {
 
   const [data, setData] = React.useState(null);
   
@@ -61,6 +61,6 @@ export default function Post() {
 
   return (
   <ul className='main-container'>
-    {!data ? "" : data.map(post => postPage(post))}
+      {!data ? "<p>Loading...</p>" : data.map(post => postPage(post))}
   </ul>)
 };

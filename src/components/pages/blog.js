@@ -1,9 +1,9 @@
 import React from 'react'
-import Posts from '../posts/Posts'
+import PostPage from '../post/Post'
 
 function Blog(){   return (
   <div className="blog">
-    <Posts />
+    <PostPage />
   </div>
 );
 
