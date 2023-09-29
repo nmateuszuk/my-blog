@@ -35,21 +35,13 @@ const PHOTOS = [
 ];
 
 
-const Item = styled(Paper)(({ theme }) => ({
-  backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
-  ...theme.typography.body2,
-  padding: theme.spacing(0.5),
-  textAlign: 'center',
-  color: theme.palette.text.secondary,
-}));
-
 function Home(){
     return (
       <section className="home">
       <section>
         <Sidebar/>
       </section>
-        <section className="container home">
+        <section className="container-home">
         <Box sx={{ width: 1200, height: 300 }}>
           <Masonry columns={3} spacing={3}>
             {PHOTOS.map((photo) => (
@@ -61,7 +53,6 @@ function Home(){
         </Box>
       </section>
     </section>)
-
 
 }
 
