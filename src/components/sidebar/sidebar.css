@@ -1,5 +1,7 @@
 .sidebar {
-    flex: 5;
+    flex: 3;
+    position: absolute;
+    right: 0;
     height: fit-content;
     margin: 10px;
     padding-bottom: 20px;
