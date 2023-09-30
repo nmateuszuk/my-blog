@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom'
 import Blog from './components/pages/blog'
 import Login from './components/pages/login'
 import ContactUs from './components/pages/contact-us'
+import NotFound from 'components/pages/NotFound'
 
 const generatePage=page=> {
   const pageComponents = {
@@ -12,10 +13,11 @@ const generatePage=page=> {
   };
 
     try{
-        return React.createElement(pageComponents[page])
+      const component = page in pageComponents ? pageComponents[page] : NotFound; 
+      return React.createElement(component)
     }catch(err){
         console.warn(err)
-        return React.createElement(()=>404)
+        return React.createElement(NotFound)
     }
 }
 

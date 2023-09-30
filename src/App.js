@@ -5,6 +5,8 @@ import {BrowserRouter as Router, Routes, Route, Navigate} from 'react-router-dom
 import PageRenderer from './page-renderer';
 import Home from './components/pages/home';
 import Write from './components/writePost/Write';
+import PostSingle from './components/post/PostSingle';
+import NotFound from 'components/pages/NotFound';
 
 
 function App() {
@@ -21,9 +23,10 @@ function App() {
         <Navigation/>
         <Routes>
             <Route path="/:page" element={<PageRenderer/>} />
+            <Route path="/blog/post/:id" element={<PostSingle/>}/>
             <Route path="/"  element={<Home/>}/>
             <Route path="/write"  element={<Write/>}/>
-            <Route element={()=>404}/>
+            <Route path="*" element={<NotFound />}/>
         </Routes>
       </div>
     </Router>
