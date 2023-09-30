@@ -35,7 +35,7 @@ export default function PostPage() {
           </span>
         </div>
         <span className="postTitle">
-          <Link to="/post/abc" className="link">
+          <Link to={"post/"+ post["id"]} className="link">
           <p>{!post ? "Loading..." : post["title"]}</p>
           </Link>
         </span>
