@@ -2,6 +2,10 @@ import { Link,useParams } from "react-router-dom";
 import "./postSingle.css";
 import React from "react";
 import "./post.css";
+import { CommentsSection} from '@slydragonn/react-easy-comments'
+import Comments from '../helper/comments'
+import User from '../helper/user'
+
 
 export default function PostSingle() {
   const { id } = useParams();
@@ -55,6 +59,36 @@ export default function PostSingle() {
     return (
       <div className="postContainer">
         {!post ? "<p>Loading...</p>" : postSinglePage(post)}
+        <h1>My Comments Section</h1>
+      <CommentsSection
+        currentUser={{
+          id: User.id,
+          name: User.name,
+          likes: User.likes,
+          dislikes: User.dislikes,
+          avartarUrl: User.avatarUrl
+        }}
+        initialComments={[
+          Comments,
+          (commentElement) => ({
+            commentId: commentElement.id,
+            userId: commentElement.userId,
+            username: commentElement.username,
+            comment: commentElement.text,
+            creationDate: commentElement.date,
+            likes: commentElement.likes,
+            dislikes: commentElement.dislikes,
+            avatarUrl: commentElement.image,
+            profileLink: commentElement.link
+          })
+        ]}
+        listeners={{
+          onSubmit: (comment) => (console.log(comment)),
+          onUpdate: (comment) => (console.log(comment)),
+          onDelete: (comment) => (console.log(comment))
+        }}
+        options={{}}
+      />
       </div>
     );
   }
