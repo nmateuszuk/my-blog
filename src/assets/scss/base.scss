@@ -1,5 +1,5 @@
 @import './_variables';
-@import './_topbar';
+@import '../../components/topbar/topbar.css';
 
 //adding html will help to overide other styles
 html body{
@@ -8,3 +8,6 @@ html body{
     margin: 0;
     background-color:$background;
 }
+
+.site-navigation{
+    position: sticky;}

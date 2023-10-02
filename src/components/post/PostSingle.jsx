@@ -1,10 +1,10 @@
 import { Link,useParams } from "react-router-dom";
 import "./postSingle.css";
 import React from "react";
-import "./post.css";
 import { CommentsSection} from '@slydragonn/react-easy-comments'
 import Comments from '../helper/comments'
 import User from '../helper/user'
+import Sidebar from "components/sidebar/Sidebar";
 
 
 export default function PostSingle() {
@@ -21,9 +21,9 @@ export default function PostSingle() {
 
   const postSinglePage = (post) => {
     return (
-      <li key={post["id"]} className="post">
+      <li key={post["id"]} className="singlePost">
         <img
-          className="postImg"
+          className="singlePostImg"
           src={!post ? "Loading..." : post["imageLink"]}
           alt=""
         />
@@ -40,7 +40,7 @@ export default function PostSingle() {
               </Link>
             </span>
           </div>
-          <span className="postTitle">
+          <span className="singlePostTitle">
             <p>{!post ? "Loading..." : post["title"]}</p>
           </span>
           <hr />
@@ -48,7 +48,7 @@ export default function PostSingle() {
             <p>{!post ? "Loading..." : post["createdAt"]}</p>
           </span>
         </div>
-        <span className="postDesc">
+        <span className="singlePostEdit">
           <p>{!post ? "Loading..." : post["body"]}</p>
         </span>
       </li>
@@ -89,6 +89,7 @@ export default function PostSingle() {
         }}
         options={{}}
       />
+      <div>Sidebar</div>
       </div>
     );
   }

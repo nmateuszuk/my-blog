@@ -3,11 +3,10 @@ import React from 'react'
 import Navigation from './components/topbar/Topbar'
 import {BrowserRouter as Router, Routes, Route, Navigate} from 'react-router-dom'
 import PageRenderer from './page-renderer';
-import Home from './components/pages/home';
+import Home from 'components/pages/Home';
 import Write from './components/writePost/Write';
 import PostSingle from './components/post/PostSingle';
 import NotFound from 'components/pages/NotFound';
-
 
 function App() {
 

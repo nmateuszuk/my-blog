@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
-import "./post.css";
-import React from 'react'
+import "./posts.css";
+import React from 'react';
 
-export default function PostPage() {
+export default function AllPosts() {
 
   const [data, setData] = React.useState(null);
   

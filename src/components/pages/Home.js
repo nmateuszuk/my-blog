@@ -1,5 +1,6 @@
 import React from 'react'
 import Sidebar from '../sidebar/Sidebar';
+import { Textarea } from '@mui/joy'
 import Box from '@mui/material/Box';
 import { styled } from '@mui/material/styles';
 import Paper from '@mui/material/Paper';
@@ -37,11 +38,10 @@ const PHOTOS = [
 
 function Home(){
     return (
-      <section className="home">
-      <section>
+      <>
+      <div className="home">
         <Sidebar/>
-      </section>
-        <section className="container-home">
+        <div className="container-home">
         <Box sx={{ width: 1200, height: 300 }}>
           <Masonry columns={3} spacing={3}>
             {PHOTOS.map((photo) => (
@@ -51,9 +51,9 @@ function Home(){
             ))}
           </Masonry>
         </Box>
-      </section>
-    </section>)
-
+      </div>
+    </div>
+    </>);
 }
 
 export default Home;
